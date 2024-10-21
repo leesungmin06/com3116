@@ -1,15 +1,26 @@
 import pygame
 
 pygame.init()
+#colors
+BLUE = (0,0,255); RED = (255,0,0)
 
+# screen
+SCR_WIDTH, SCR_HEIGHT = 400, 200
+screen = pygame.display.set_mode((SCR_WIDTH, SCR_HEIGHT))
+pygame.display.set_caption("Snake Game")
 
-screen = pygame.display.set_mode((400,200))
-pygame.display.set_caption("Snake Game ver 1.0")
-pygame.display.update()
+# snake
+snake_size = 10
 
 running = True
 while running:
     for event in pygame.event.get():
-        print(event)
-        
+        #print(event)
+        if event.type == pygame.QUIT:
+            running = False
+            pygame.draw.rect(screen, BULE, [int(SCR_WODTH/2 - snake_size/2), 
+                                          int(SCR_HEIGHT/2 - snake_size/2), 
+                                          sanke_size,
+                                          sanke_size])
+        pygame.display.update()        
 #pygame.quit
